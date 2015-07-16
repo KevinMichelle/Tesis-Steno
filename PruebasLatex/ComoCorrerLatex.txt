@@ -1,0 +1,6 @@
+pdflatex "nombre_archivo"
+bibtex "nombre_archivo"
+
+Para instalar todos los paquetes de Latex:
+
+sudo apt-get install texlive-full

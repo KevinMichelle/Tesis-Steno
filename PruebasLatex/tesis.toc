@@ -1,0 +1,15 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\'{o}n}{4}
+\contentsline {paragraph}{Hip\'{o}tesis:}{4}
+\contentsline {paragraph}{Objetivo general:}{4}
+\contentsline {paragraph}{Objetivos espec\'{\i }ficos:}{4}
+\contentsline {chapter}{\numberline {2}Antecedentes}{5}
+\contentsline {chapter}{\numberline {3}Trabajos relacionados}{6}
+\contentsline {chapter}{\numberline {4}Metodolog\'{\i }a}{7}
+\contentsline {chapter}{\numberline {5}Soluci\'{o}n propuesta}{8}
+\contentsline {section}{\numberline {5.1}Pedazo}{8}
+\contentsline {subsection}{\numberline {5.1.1}Otro}{8}
+\contentsline {chapter}{\numberline {6}Evaluaci\'{o}n experimental}{9}
+\contentsline {chapter}{\numberline {7}Conclusiones}{11}
+\contentsline {section}{\numberline {7.1}Contribuciones}{11}
+\contentsline {section}{\numberline {7.2}Trabajo a futuro}{11}

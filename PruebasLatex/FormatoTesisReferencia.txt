@@ -1,0 +1,23 @@
+Agradecimientos
+Resumen
+Indice general
+Indice de figuras
+¿Indice de cuatros?
+Capítulo 1 - Introducción
+	1.1 - Hipótesis
+		Texto
+		Hipótesis
+	1.2 - Objetivos
+		Objetivo general
+		Objetivos específicos
+	1.3 - Justificación
+	1.4 - Estructura de la tesis
+Capítulo 2 - Antecedentes
+Capítulo 3 - Trabajos relacionados (estado del arte)
+	(Investigar trabajos de otros autores)
+Capítulo 4 - Metodología
+Capítulo 5 - Solución propuesta
+Capítulo 6 - Evaluación
+Capítulo 7 - Resultados
+Capítulo 8 - Conclusiones
+Bibliografía
