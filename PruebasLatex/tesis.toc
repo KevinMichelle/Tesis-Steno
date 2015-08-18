@@ -1,15 +1,28 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\'{o}n}{4}
-\contentsline {paragraph}{Hip\'{o}tesis:}{4}
-\contentsline {paragraph}{Objetivo general:}{4}
-\contentsline {paragraph}{Objetivos espec\'{\i }ficos:}{4}
-\contentsline {chapter}{\numberline {2}Antecedentes}{5}
-\contentsline {chapter}{\numberline {3}Trabajos relacionados}{6}
-\contentsline {chapter}{\numberline {4}Metodolog\'{\i }a}{7}
-\contentsline {chapter}{\numberline {5}Soluci\'{o}n propuesta}{8}
-\contentsline {section}{\numberline {5.1}Pedazo}{8}
-\contentsline {subsection}{\numberline {5.1.1}Otro}{8}
-\contentsline {chapter}{\numberline {6}Evaluaci\'{o}n experimental}{9}
-\contentsline {chapter}{\numberline {7}Conclusiones}{11}
-\contentsline {section}{\numberline {7.1}Contribuciones}{11}
-\contentsline {section}{\numberline {7.2}Trabajo a futuro}{11}
+\contentsline {chapter}{\numberline {1}Introducci\'{o}n}{5}
+\contentsline {paragraph}{Hip\'{o}tesis:}{5}
+\contentsline {paragraph}{Objetivo general:}{5}
+\contentsline {paragraph}{Objetivos espec\'{\i }ficos:}{5}
+\contentsline {chapter}{\numberline {2}Antecedentes}{6}
+\contentsline {section}{\numberline {2.1}Dispositivos m{\'{o}}viles}{6}
+\contentsline {subsection}{\numberline {2.1.1}Android/iOS}{6}
+\contentsline {section}{\numberline {2.2}Desarrollo de software}{6}
+\contentsline {subsection}{\numberline {2.2.1}Desarrollo de software en dispositivos m{\'{o}}viles}{7}
+\contentsline {section}{\numberline {2.3}Teor{\'{i}}a de la comunicaci{\'{o}}n}{7}
+\contentsline {section}{\numberline {2.4}Arquitectura de computadoras}{7}
+\contentsline {subsection}{\numberline {2.4.1}Archivos digitales}{7}
+\contentsline {subsection}{\numberline {2.4.2}Im{\'{a}}genes digitales}{7}
+\contentsline {section}{\numberline {2.5}Seguridad inform{\'{a}}tica}{8}
+\contentsline {subsection}{\numberline {2.5.1}Seguridad por obscuridad}{8}
+\contentsline {subsection}{\numberline {2.5.2}Criptograf{\'{i}}a}{8}
+\contentsline {subsection}{\numberline {2.5.3}Esteganograf{\'{i}}a}{8}
+\contentsline {subsection}{\numberline {2.5.4}Esteganograf{\'{i}}a en im{\'{a}}genes digitales}{9}
+\contentsline {chapter}{\numberline {3}Trabajos relacionados}{10}
+\contentsline {chapter}{\numberline {4}Metodolog\'{\i }a}{11}
+\contentsline {chapter}{\numberline {5}Soluci\'{o}n propuesta}{12}
+\contentsline {section}{\numberline {5.1}Pedazo}{12}
+\contentsline {subsection}{\numberline {5.1.1}Otro}{12}
+\contentsline {chapter}{\numberline {6}Evaluaci\'{o}n experimental}{13}
+\contentsline {chapter}{\numberline {7}Conclusiones}{15}
+\contentsline {section}{\numberline {7.1}Contribuciones}{15}
+\contentsline {section}{\numberline {7.2}Trabajo a futuro}{15}
