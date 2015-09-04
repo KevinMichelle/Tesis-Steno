@@ -2,7 +2,7 @@
 
 Root:
 	BoxLayout:
-		orientation: 'vertical'
+		orientation: 'horizontal'
 		BoxLayout:
 			size_hint_y: None
 			height: 100
@@ -14,10 +14,17 @@ Root:
 				on_release: root.EscribirClave()
 				
 			Button:
-				text: 'Otro boton'
-				on_release: root.ProcesaTodo("cambio dummy")
+				text: 'Ocultar'
+				on_release: root.ProcesaTodo("")
+			Button:
+				text: 'Recuperar'
+				on_release: root.Recuperar()
 			Label:
 				text: root.labelPruebas
+			Image:
+				id: image
+				source: root.filename
+				size: 600, 600 / self.image_ratio
 				
 
 
@@ -26,8 +33,9 @@ Root:
 		size: root.size
 		pos: root.pos
 		orientation: "vertical"
-		FileChooserListView:
+		FileChooserIconView:
 			id: filechooser_load
+			filters: ['*jpeg', '*jpg','*png', '*bmp']
 
 		BoxLayout:
 			size_hint_y: None

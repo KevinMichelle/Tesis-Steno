@@ -5,8 +5,6 @@ from kivy.properties import ObjectProperty
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.properties import StringProperty
-from kivy.uix.widget import Widget
-
 
 import os
 import numpy
@@ -21,16 +19,16 @@ class EscribirClaveVentana(FloatLayout):
 	cancel = ObjectProperty(None)
 	
 class Root(FloatLayout):
-	miau = "hola"
 	labelPruebas = StringProperty()
 	loadfile = ObjectProperty(None)
 	savefile = ObjectProperty(None)
+	filename = StringProperty()
 	
 	def dismiss_popup(self):
 		self._popup.dismiss()
 	
 	def ElegirArchivo(self):
-		print self.labelPruebas, "hola miau"
+		print self.labelPruebas
 		content = ElegirArchivoVentana(load=self.load, cancel=self.dismiss_popup)
 		self._popup = Popup(title="Load file text", content=content,size_hint=(0.9, 0.9))
 		self._popup.open()
@@ -44,12 +42,15 @@ class Root(FloatLayout):
 		print "Procesar archivo"
 		print mensaje
 		self.labelPruebas = mensaje
+		
+	def Recuperar(self):
+		print 'recuperar'
 
 	def load(self, path, filename):
-		print self.miau
-		self.miau = "cambio miau"
 		if len(filename) == 1:
 			with open(os.path.join(path, filename[0])) as stream:
+				#checar extension
+				self.filename = os.path.join(path, filename[0])
 				print "cargar"
 
 		self.dismiss_popup()
