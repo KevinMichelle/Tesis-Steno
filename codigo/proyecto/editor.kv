@@ -1,32 +1,26 @@
 #:kivy 1.1.0
 
 Root:
-	BoxLayout:
-		orientation: 'horizontal'
-		BoxLayout:
-			size_hint_y: None
-			height: 100
-			Button:
-				text: 'Elegir archivo'
-				on_release: root.ElegirArchivo()
-			Button:
-				text: 'Escribe clave'
-				on_release: root.EscribirClave()
-				
-			Button:
-				text: 'Ocultar'
-				on_release: root.ProcesaTodo("")
-			Button:
-				text: 'Recuperar'
-				on_release: root.Recuperar()
-			Label:
-				text: root.labelPruebas
-			Image:
-				id: image
-				source: root.filename
-				size: 600, 600 / self.image_ratio
-				
-
+	orientation: 'vertical'
+	GridLayout:
+		cols: 2
+		Button:
+			text: 'Elegir archivo'
+			on_release: root.ElegirArchivo()
+		Button:
+			text: 'Escribe clave'
+			on_release: root.EscribirClave()	
+		Button:
+			text: 'Ocultar'
+			on_release: root.ProcesaTodo("")
+		Button:
+			text: 'Recuperar'
+			on_release: root.Recuperar()
+		Label:
+			text: root.labelPruebas
+		Image:
+			id: image
+			source: root.filename
 
 <ElegirArchivoVentana>:
 	BoxLayout:
@@ -39,13 +33,13 @@ Root:
 
 		BoxLayout:
 			size_hint_y: None
-			height: 100
+			height: 30
 			Button:
-				text: "CancelInside"
+				text: "Cancelar"
 				on_release: root.cancel()
 
 			Button:
-				text: "LoadInside"
+				text: "Cargar"
 				on_release: root.load(filechooser_load.path, filechooser_load.selection)
 
 <EscribirClaveVentana>:
@@ -53,12 +47,14 @@ Root:
 		size: root.size
 		pos: root.pos
 		orientation: "vertical"
-			
-		TextInput:
-			id: text_input_save
-			size_hint_y: None
-			multiline: True
-
+		AnchorLayout:
+			anchor_x: 'center'
+			anchor_y: 'top'
+			TextInput:
+				id: text_input_save
+				size_hint_y: None
+				height: 200
+				multiline: True
 
 		BoxLayout:
 			size_hint_y: None

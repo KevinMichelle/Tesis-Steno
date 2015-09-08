@@ -5,9 +5,15 @@ from kivy.properties import ObjectProperty
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.properties import StringProperty
+from kivy.config import Config
+from kivy.garden import FileChooserThumbView
+#from kivy.core.window import Window
 
 import os
-import numpy
+#import numpy problemas con el apk
+
+Config.set('kivy', 'keyboard_mode', 'systemandmulti')
+
 
 class ElegirArchivoVentana(FloatLayout):
 	load = ObjectProperty(None)
@@ -30,12 +36,12 @@ class Root(FloatLayout):
 	def ElegirArchivo(self):
 		print self.labelPruebas
 		content = ElegirArchivoVentana(load=self.load, cancel=self.dismiss_popup)
-		self._popup = Popup(title="Load file text", content=content,size_hint=(0.9, 0.9))
+		self._popup = Popup(title="Elige un archivo (imagen)", content=content,size_hint=(1.0, 1.0))
 		self._popup.open()
 
 	def EscribirClave(self):
 		content = EscribirClaveVentana(clave=self.clave, cancel=self.dismiss_popup)
-		self._popup = Popup(title="Save file text", content=content,size_hint=(0.9, 0.9))
+		self._popup = Popup(title="Escribe algo", content=content,size_hint=(1.0, 1.0))
 		self._popup.open()
 		
 	def ProcesaTodo(self, mensaje):
