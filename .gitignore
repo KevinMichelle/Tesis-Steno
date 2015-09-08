@@ -1,3 +1,4 @@
 *.db
 codigo/proyecto/buildozer.spec
 *.spec
+*.pyc

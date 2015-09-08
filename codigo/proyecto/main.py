@@ -12,6 +12,8 @@ from kivy.garden import FileChooserThumbView
 import os
 #import numpy problemas con el apk
 
+import auxiliar
+
 Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 
 
@@ -51,6 +53,9 @@ class Root(FloatLayout):
 		
 	def Recuperar(self):
 		print 'recuperar'
+		print self.filename
+		self.labelPruebas = "{} pixeles disponibles".format(auxiliar.capacidad(self.filename))
+		
 
 	def load(self, path, filename):
 		if len(filename) == 1:
