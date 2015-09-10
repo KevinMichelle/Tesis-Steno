@@ -36,7 +36,6 @@ def image_steganography(filename, _string, is_text):
 		image = Image.open(filename)
 		list_of_pixels = image.load()
 		list_of_bits = get_list_of_bits(_string)
-		print list_of_bits, len(list_of_bits)
 		xs, ys = image.size
 		total_bits = len(list_of_bits) + 8 #to fills zeroes
 		if total_bits % 3 > 0:
@@ -45,13 +44,15 @@ def image_steganography(filename, _string, is_text):
 		hint_element = list_of_pixels[0, 0][0]
 		hint_element_bits = number_to_bits(hint_element, 8)
 		if is_text:
-			new_bit = '1'
+			hint_bit = '1'
 		else:
-			new_bit = '0'
+			hint_bit = '0'
 		counter = 1
-		new_hint_element_bits = replace_last_bit(hint_element_bits, new_bit)
-		print "total", total_bits
-		image.show()
+		new_hint_element_bits = replace_last_bit(hint_element_bits, hint_bit)
+		new_hint = bits_to_number(new_hint_element_bits)
+		first_tuple = list_of_pixels[0, 0]
+		new_tuple = (new_hint, first_tuple[1], first_tuple[2])
+		list_of_pixels[0, 0] = new_tuple
 		for y, x in itertools.product(xrange(ys), xrange(1, xs)):
 			actual_pixel = list_of_pixels[x, y]
 			new_pixel = []
@@ -71,10 +72,56 @@ def image_steganography(filename, _string, is_text):
 			list_of_pixels[x, y] = tuple(new_pixel)
 			if bool_break:
 				break
-		image.show()
+		image.save(filename)
 		return None
 		
+def check_bits(list_of_bits, sub_string_bits):
+	string_ = "".join(list_of_bits)
+	if sub_string_bits in string_:
+		return True
+	else:
+		return False
+		
+def get_character(bits):
+	return None
+	
+def loop_bits(bits):
+	return None
+		
+def search_image_steganography(filename):
+	if files.file_exists(filename):
+		image = Image.open(filename)
+		list_of_pixels = image.load()
+		xs, ys = image.size
+		bool_quit = False
+		hint_element = list_of_pixels[0, 0][0]
+		hint_element_bits = number_to_bits(hint_element, 8)
+		hint_bit = hint_element_bits[len(hint_element_bits) - 1]
+		is_text = False
+		if hint_bit == '1':
+			is_text = True
+		list_of_bits = []
+		for y, x in itertools.product(xrange(ys), xrange(1, xs)):
+			actual_pixel = list_of_pixels[x, y]
+			for element in actual_pixel:
+				element_bits = number_to_bits(element, 8)
+				list_of_bits.append(element_bits[len(element_bits) - 1])
+			if is_text:
+				need_to_break = check_bits(list_of_bits, "00000000")
+			if need_to_break:
+				break
+		string_bits = "".join(list_of_bits[0:len(list_of_bits)-9])
+		total_characters = len(string_bits) / 8
+		list_of_characters = []
+		for n in xrange(1, total_characters + 1):
+			last = (n * 8)
+			first = last - 8
+			sub_string_bits = string_bits[first:last]
+			new_number = bits_to_number(sub_string_bits)
+			list_of_characters.append(chr(new_number))
+		print "".join(list_of_characters)
 
 #run in the 'package' directory
 if __name__ == '__main__':
-	image_steganography('captura1.png', 'Hola.', True)
+	image_steganography('captura1.png', 'hola como estas este es un mensaje oculto nundfnudnfudnufdnfd .', True)
+	search_image_steganography('captura1.png')
