@@ -1,3 +1,5 @@
+__version__ = '1.0'
+
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.factory import Factory
@@ -13,8 +15,6 @@ import os
 #import numpy problemas con el apk
 
 import auxiliar
-
-Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 
 
 class ElegirArchivoVentana(FloatLayout):
