@@ -8,16 +8,25 @@ Root:
 			text: 'Elegir archivo'
 			on_release: root.ElegirArchivo()
 		Button:
-			text: 'Escribe clave'
-			on_release: root.EscribirClave()	
+			text: 'Escribe mensaje'
+			on_release: root.EscribirMensaje()	
 		Button:
 			text: 'Ocultar'
-			on_release: root.ProcesaTodo("")
+			on_release: root.Ocultar()
 		Button:
 			text: 'Recuperar'
 			on_release: root.Recuperar()
-		Label:
-			text: root.labelPruebas
+		GridLayout:
+			rows: 3
+			Label:
+				text: root.labelPruebas
+				text_size: self.width, None
+			Label:
+				text: root.labelPruebas
+				text_size: self.width, None
+			Label:
+				text: root.label3
+				text_size: self.width, None
 		Image:
 			id: image
 			source: root.filename
@@ -29,7 +38,7 @@ Root:
 		orientation: "vertical"
 		FileChooserIconView:
 			id: filechooser_load
-			filters: ['*jpeg', '*jpg','*png', '*bmp']
+			filters: ['*png', '*bmp']
 
 		BoxLayout:
 			size_hint_y: None
@@ -40,9 +49,9 @@ Root:
 
 			Button:
 				text: "Cargar"
-				on_release: root.load(filechooser_load.path, filechooser_load.selection)
+				on_release: root.CargarArchivo(filechooser_load.path, filechooser_load.selection)
 
-<EscribirClaveVentana>:
+<EscribirMensajeVentana>:
 	BoxLayout:
 		size: root.size
 		pos: root.pos
@@ -50,11 +59,13 @@ Root:
 		AnchorLayout:
 			anchor_x: 'center'
 			anchor_y: 'top'
-			TextInput:
-				id: text_input_save
-				size_hint_y: None
-				height: 200
-				multiline: True
+			ScrollView:
+				size: self.size
+				TextInput:
+					id: text_input_save
+					size_hint_y: None
+					height: 200
+					multiline: True
 
 		BoxLayout:
 			size_hint_y: None
@@ -65,4 +76,21 @@ Root:
 
 			Button:
 				text: "SaveInside"
-				on_release: root.clave(text_input_save.text)
+				on_release: root.GuardarMensaje(text_input_save.text)
+				
+<MostrarMensaje>
+	BoxLayout:
+		size: root.size
+		pos: root.pos
+		orientation: "vertical"
+		ScrollView:
+			size: self.size
+			Label:
+				text: root.mensajerecuperado
+				text_size: self.width, None
+		BoxLayout:
+			size_hint_y: None
+			height: 30
+			Button:
+				text: "Cerrar"
+				on_release: root.cancel()

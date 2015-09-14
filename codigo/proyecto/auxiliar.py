@@ -101,6 +101,7 @@ def search_image_steganography(filename):
 		if hint_bit == '1':
 			is_text = True
 		list_of_bits = []
+		need_to_break = False
 		for y, x in itertools.product(xrange(ys), xrange(1, xs)):
 			actual_pixel = list_of_pixels[x, y]
 			for element in actual_pixel:
@@ -119,9 +120,9 @@ def search_image_steganography(filename):
 			sub_string_bits = string_bits[first:last]
 			new_number = bits_to_number(sub_string_bits)
 			list_of_characters.append(chr(new_number))
-		print "".join(list_of_characters)
+		return "".join(list_of_characters)
 
 #run in the 'package' directory
 if __name__ == '__main__':
 	image_steganography('captura1.png', 'hola como estas este es un mensaje oculto nundfnudnfudnufdnfd .', True)
-	search_image_steganography('captura1.png')
+	print search_image_steganography('captura1.png')
