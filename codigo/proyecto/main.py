@@ -57,6 +57,7 @@ class Root(FloatLayout):
 		
 	def Ocultar(self):
 		if ((self.mensaje != '' or self.mensaje is not None) and (self.filename != '' or self.filename is not None)):
+			print "mensaje a ocultar: ", self.mensaje
 			auxiliar.image_steganography(self.filename, self.mensaje, True)
 			self.label3 = "Mensaje ocultado"
 		
@@ -64,6 +65,7 @@ class Root(FloatLayout):
 		print "recuperar", len(self.filename)
 		if len(self.filename) > 0:
 			self.mensajerecuperado = auxiliar.search_image_steganography(self.filename)
+			print "mensaje recuperado: ", self.mensajerecuperado
 			content = MostrarMensaje(GuardarMensaje=self.GuardarMensaje, cancel=self.dismiss_popup, mensajerecuperado = self.mensajerecuperado)
 			self._popup = Popup(title="Mensaje recuperado", content=content, size_hint=(1.0, 1.0))
 			self._popup.open()

@@ -4,6 +4,18 @@ import os.path
 import files as files
 import itertools
 
+def get_abc():
+	abc = []
+	for number in xrange(33, 95):
+			abc.append(chr(number))
+	abc.append(chr(95))
+	for number in xrange(97, 126):
+			abc.append(chr(number))
+	return abc
+	
+def is_valid(byte):
+	abc = get_abc()
+
 def capacidad(filename):
 	if files.file_exists(filename):
 		image = Image.open(filename)
@@ -77,6 +89,7 @@ def image_steganography(filename, _string, is_text):
 		
 def check_bits(list_of_bits, sub_string_bits):
 	string_ = "".join(list_of_bits)
+	print "string", string_
 	if sub_string_bits in string_:
 		return True
 	else:
@@ -107,11 +120,14 @@ def search_image_steganography(filename):
 			for element in actual_pixel:
 				element_bits = number_to_bits(element, 8)
 				list_of_bits.append(element_bits[len(element_bits) - 1])
+			if len(list_of_bits) >= 8:
+					new_byte = ist_of_bits[0:8]
+					list_of_bits = list_of_bits[8:len(list_of_bits)]
 			if is_text:
-				need_to_break = check_bits(list_of_bits, "00000000")
+				need_to_break = check_bits(new_byte, "00000000")
 			if need_to_break:
 				break
-		string_bits = "".join(list_of_bits[0:len(list_of_bits)-9])
+		string_bits = "".join(list_of_bits[0:len(list_of_bits)-8])
 		total_characters = len(string_bits) / 8
 		list_of_characters = []
 		for n in xrange(1, total_characters + 1):
@@ -124,5 +140,5 @@ def search_image_steganography(filename):
 
 #run in the 'package' directory
 if __name__ == '__main__':
-	image_steganography('captura1.png', 'hola como estas este es un mensaje oculto nundfnudnfudnufdnfd .', True)
+	image_steganography('captura1.png', 'este es un mensaje', True)
 	print search_image_steganography('captura1.png')
